@@ -109,6 +109,7 @@ public class MainActivity extends AppCompatActivity {
     protected void goToHelp(View v){
         // construct an EXPLICIT Intent to go to HelpActivity
         // Intent: specify where to start (context) and where we're going (next Activity)
+
         Intent helpIntent = new Intent(this, HelpActivity.class);
         helpIntent.putExtra("gallons", mRoom.gallonsOfPaintRequired());
         startActivity(helpIntent);
