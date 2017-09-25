@@ -95,11 +95,13 @@ public class MainActivity extends AppCompatActivity {
         mRoom.setWidth(Float.parseFloat(mWidthEditText.getText().toString()));
         mRoom.setHeight(Float.parseFloat(mHeightEditText.getText().toString()));
         mRoom.setDoors(Integer.parseInt(mDoorsEditText.getText().toString()));
-        mRoom.setWindows(Integer.parseInt(mDoorsEditText.getText().toString()));
+        mRoom.setWindows(Integer.parseInt(mWindowsEditText.getText().toString()));
 
         //TODO: FINISH THE REST
+        float total = mRoom.totalSurfaceArea();
+        float gallons = mRoom.gallonsOfPaintRequired();
 
-        mGallonsTextView.setText(R.string.interior_survace_area_text + mRoom.totalSurfaceArea() + "\n" + R.string.gallons_needed_text + mRoom.gallonsOfPaintRequired());
+        mGallonsTextView.setText(R.string.interior_survace_area_text + total + "\n" + R.string.gallons_needed_text + gallons);
         // mGallonsTextView.setText(String.valueOf(mRoom.gallonsOfPaintRequired()));
         saveSharedPreferences();
     }

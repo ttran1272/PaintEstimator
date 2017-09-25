@@ -17,7 +17,8 @@ public class HelpActivity extends AppCompatActivity {
         Bundle extras = getIntent().getExtras();
         String gallons = extras.getString("gallons");
 
-        Toast.makeText(getApplicationContext(),"Estimated Paint Required: " + gallons, Toast.LENGTH_LONG).show();
+        //Toast.makeText(getApplicationContext(),"Estimated Paint Required: " + gallons, Toast.LENGTH_LONG).show();
+        Toast.makeText(this,"Estimated Paint Required: " + gallons, Toast.LENGTH_LONG).show();
 
         Button returnButton = (Button) findViewById(R.id.returnButton);
         returnButton.setOnClickListener(new View.OnClickListener() {

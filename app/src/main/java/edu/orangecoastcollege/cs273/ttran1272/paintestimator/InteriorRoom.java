@@ -18,6 +18,14 @@ public class InteriorRoom {
     private int mDoors;
     private int mWindows;
 
+    public InteriorRoom() {
+        mLength = 0.0f;
+        mWidth = 0.0f;
+        mHeight = 0.0f;
+        mDoors =0;
+        mWidth = 0;
+    }
+
     public float getLength() {
         return mLength;
     }
