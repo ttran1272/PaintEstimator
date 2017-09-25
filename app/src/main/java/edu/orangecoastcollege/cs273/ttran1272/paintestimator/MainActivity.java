@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
    }
 
 
-    protected void computerGallons(View v){
+    protected void computeGallons(View v){
 
         // Update model first, then calculate
         mRoom.setLength(Float.parseFloat(mLengthEditText.getText().toString()));
@@ -101,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
         float total = mRoom.totalSurfaceArea();
         float gallons = mRoom.gallonsOfPaintRequired();
 
-        mGallonsTextView.setText(R.string.interior_survace_area_text + total + "\n" + R.string.gallons_needed_text + gallons);
+        mGallonsTextView.setText("Interior surface area:" + total + "feet \n" + "Gallons needed: " + gallons);
         // mGallonsTextView.setText(String.valueOf(mRoom.gallonsOfPaintRequired()));
         saveSharedPreferences();
     }

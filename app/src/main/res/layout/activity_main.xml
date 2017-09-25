@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/ic_paint_estimator"
     tools:context="edu.orangecoastcollege.cs273.ttran1272.paintestimator.MainActivity">
 
 
@@ -33,6 +34,7 @@
         android:text="@string/length"
         android:layout_marginTop="65dp"
         android:layout_marginLeft="125dp"
+        android:layout_marginStart="125dp"
         android:layout_below="@+id/descriptionTextView" />
 
     <EditText
@@ -57,6 +59,7 @@
         android:text="@string/width"
         android:layout_marginTop="30dp"
         android:layout_marginLeft="125dp"
+        android:layout_marginStart="125dp"
         android:layout_below="@+id/lengthLableTextView" />
 
     <EditText
@@ -78,6 +81,7 @@
         android:textSize="20sp"
         android:layout_marginTop="30dp"
         android:layout_marginLeft="125dp"
+        android:layout_marginStart="125dp"
         android:layout_below="@id/widthLableTextView"
         android:text="@string/height" />
 
@@ -170,6 +174,7 @@
         android:layout_height="wrap_content"
         android:text="@string/gallons"
         android:textSize="20sp"
+        android:gravity="center"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="75dp" />
