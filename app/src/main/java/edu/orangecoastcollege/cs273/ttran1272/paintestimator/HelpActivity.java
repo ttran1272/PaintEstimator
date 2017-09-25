@@ -1,10 +1,31 @@
 package edu.orangecoastcollege.cs273.ttran1272.paintestimator;
 
-/**
- * Created by ttran1272 on 9/19/2017.
- */
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
-public class HelpActivity {
+public class HelpActivity extends AppCompatActivity {
 
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_help);
 
+        Bundle extras = getIntent().getExtras();
+        String gallons = extras.getString("gallons");
+
+        Toast.makeText(getApplicationContext(),"Estimated Paint Required: " + gallons, Toast.LENGTH_LONG).show();
+
+        Button returnButton = (Button) findViewById(R.id.returnButton);
+        returnButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i  = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(i);
+            }
+        });
+    }
 }
