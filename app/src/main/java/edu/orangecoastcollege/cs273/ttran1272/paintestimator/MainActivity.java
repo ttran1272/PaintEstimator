@@ -98,10 +98,10 @@ public class MainActivity extends AppCompatActivity {
         mRoom.setWindows(Integer.parseInt(mWindowsEditText.getText().toString()));
 
         //TODO: FINISH THE REST
-        float total = mRoom.totalSurfaceArea();
-        float gallons = mRoom.gallonsOfPaintRequired();
+        double total = mRoom.totalSurfaceArea();
+        double gallons = Math.ceil(mRoom.gallonsOfPaintRequired());
 
-        mGallonsTextView.setText("Interior surface area:" + total + "feet \n" + "Gallons needed: " + gallons);
+        mGallonsTextView.setText("Interior surface area: " + total + " feet \n" + "Gallons needed: " + gallons);
         // mGallonsTextView.setText(String.valueOf(mRoom.gallonsOfPaintRequired()));
         saveSharedPreferences();
     }
@@ -111,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
         // Intent: specify where to start (context) and where we're going (next Activity)
 
         Intent helpIntent = new Intent(this, HelpActivity.class);
-        helpIntent.putExtra("gallons", mRoom.gallonsOfPaintRequired());
+        helpIntent.putExtra("gallons", ""+ mRoom.gallonsOfPaintRequired());
         startActivity(helpIntent);
     }
 }

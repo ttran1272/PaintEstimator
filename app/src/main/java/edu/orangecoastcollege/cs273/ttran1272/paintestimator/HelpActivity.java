@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class HelpActivity extends AppCompatActivity {
@@ -15,10 +16,13 @@ public class HelpActivity extends AppCompatActivity {
         setContentView(R.layout.activity_help);
 
         Bundle extras = getIntent().getExtras();
-        String gallons = extras.getString("gallons");
-
-        //Toast.makeText(getApplicationContext(),"Estimated Paint Required: " + gallons, Toast.LENGTH_LONG).show();
-        Toast.makeText(this,"Estimated Paint Required: " + gallons, Toast.LENGTH_LONG).show();
+        if (extras == null)
+            Toast.makeText(this, "the getIntent().getExtras() is null", Toast.LENGTH_LONG).show();
+        else {
+            double gallons = Double.parseDouble(extras.getString("gallons"));
+            TextView estimateTV = (TextView)findViewById(R.id.estimatedTextView);
+            estimateTV.setText("Estimated Paint Required: " + Math.ceil(gallons) + " gallons");
+        }
 
         Button returnButton = (Button) findViewById(R.id.returnButton);
         returnButton.setOnClickListener(new View.OnClickListener() {

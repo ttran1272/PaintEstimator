@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/ic_paint_estimator"
+    android:background="@drawable/paintbackground"
     tools:context="edu.orangecoastcollege.cs273.ttran1272.paintestimator.MainActivity">
 
 
